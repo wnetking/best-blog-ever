@@ -3,3 +3,46 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #eaeaea;
+}
+
+header h2 {
+  margin: 0;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 15px;
+}
+
+.main-content h1,
+.post-title {
+  text-transform: capitalize;
+}
+
+.search-wrap {
+  position: relative;
+}
+
+.search-wrap input {
+  padding: 5px 15px;
+}
+
+.search-result {
+  overflow: auto;
+  position: absolute;
+  top: calc(100% + 25px);
+  right: 0;
+  width: 100vw;
+  max-width: 500px;
+  max-height: 500px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 0 15px #eaeaea;
+}
