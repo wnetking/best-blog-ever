@@ -1,2 +1,2 @@
 # best-blog-ever
-Test project to get a work 💼
+Test project to get a job 💼
