@@ -42,7 +42,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  [getPostsRequest.name]: bindActionCreators(getPostsRequest, dispatch)
+  getPostsRequest: bindActionCreators(getPostsRequest, dispatch)
 });
 
 export default connect(() => ({}), mapDispatchToProps)(App);

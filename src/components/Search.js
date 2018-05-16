@@ -30,8 +30,8 @@ const mapStateToProps = ({ searchReducer }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  [searchRequest.name]: bindActionCreators(searchRequest, dispatch),
-  [searchResultReset.name]: bindActionCreators(searchResultReset, dispatch)
+  searchRequest: bindActionCreators(searchRequest, dispatch),
+  searchResultReset: bindActionCreators(searchResultReset, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
