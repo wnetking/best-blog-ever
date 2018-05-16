@@ -31,3 +31,32 @@ header h2 {
   padding: 10px 15px;
   min-width: 400px;
 }
+
+.post-meta {
+  font-size: 12px;
+}
+
+.post-meta span {
+  margin-left: 5px;
+}
+
+article h5 {
+  margin-bottom: 10px;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+}
+.search-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.sort-btns {
+  margin-left: 15px;
+}
+
+.sort-btns button {
+  padding: 9px;
+}

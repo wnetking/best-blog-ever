@@ -1,28 +1,16 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PostList from './PostList';
-import Search from './Search';
+import React from 'react'
+import Search from '../containers/Search'
+import SortButtons from './SortButtons'
+import FilteredPostsList from '../containers/FilteredPostsList'
 
-const Home = ({ posts, searchData, inputEmpty }) => (
+const Home = () => (
   <React.Fragment>
-    <Search />
-    {!inputEmpty && !searchData.length ? (
-      <p>No result</p>
-    ) : !!searchData.length ? (
-      <React.Fragment>
-        <p>Have {searchData.length} matches</p>
-        <PostList data={searchData} />
-      </React.Fragment>
-    ) : (
-      <PostList data={posts} />
-    )}
+    <div className='search-wrap'>
+      <Search />
+      <SortButtons />
+    </div>
+    <FilteredPostsList />
   </React.Fragment>
-);
+)
 
-const mapStateToProps = ({ postReducer, searchReducer }) => ({
-  posts: postReducer.posts,
-  searchData: searchReducer.data,
-  inputEmpty: searchReducer.inputEmpty
-});
-
-export default connect(mapStateToProps)(Home);
+export default Home

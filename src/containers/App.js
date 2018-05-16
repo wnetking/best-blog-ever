@@ -6,16 +6,16 @@ import Loadable from 'react-loadable';
 
 import { getPostsRequest } from '../actions';
 
-import Header from './Header';
-import Loading from './Loading';
+import Header from '../components/Header';
+import Loading from '../components/Loading';
 
 const Home = Loadable({
-  loader: () => import('./Home'),
+  loader: () => import('../components/Home'),
   loading: Loading
 });
 
 const Post = Loadable({
-  loader: () => import('./Post'),
+  loader: () => import('../containers/Post'),
   loading: Loading
 });
 
