@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { searchRequest, searchResultReset } from '../actions';
 
-import ListItem from './ListItem';
-
-const Search = ({ searchRequest, searchResultReset, data }) => {
+const Search = ({ searchRequest, searchResultReset, str }) => {
   const onChange = e => {
     if (!e.target.value) {
       searchResultReset();
@@ -15,32 +13,20 @@ const Search = ({ searchRequest, searchResultReset, data }) => {
     searchRequest(e.target.value.toLowerCase());
   };
 
-  const onBlur = () => {
-    setTimeout(() => {
-      searchResultReset();
-    }, 300);
-  };
-
   return (
     <div className="search-wrap">
       <input
         onChange={onChange}
-        onBlur={onBlur}
         type="search"
+        value={str}
         placeholder="so search, as you wish ..."
       />
-
-      {!!data.length && (
-        <div className="search-result">
-          {data.map(post => <ListItem key={post.id} post={post} />)}
-        </div>
-      )}
     </div>
   );
 };
 
 const mapStateToProps = ({ searchReducer }) => ({
-  data: searchReducer
+  str: searchReducer.str
 });
 
 const mapDispatchToProps = dispatch => ({

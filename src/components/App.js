@@ -9,8 +9,8 @@ import { getPostsRequest } from '../actions';
 import Header from './Header';
 import Loading from './Loading';
 
-const PostList = Loadable({
-  loader: () => import('./PostList'),
+const Home = Loadable({
+  loader: () => import('./Home'),
   loading: Loading
 });
 
@@ -31,9 +31,8 @@ class App extends Component {
       <Router>
         <React.Fragment>
           <Header />
-
-          <div className="main-content">
-            <Route exact path={`/`} component={PostList} />
+          <div className="main-content container">
+            <Route exact path={`/`} component={Home} />
             <Route exact path={`/post/:id`} component={Post} />
           </div>
         </React.Fragment>

@@ -1,17 +1,30 @@
 import * as t from '../constants';
 
-const initState = [];
+const initState = {
+  data: [],
+  inputEmpty: true,
+  str: ''
+};
 
 const searchReducer = (state = initState, action) => {
   switch (action.type) {
     case t.SEARCH_REQUEST:
-      return [...state];
+      return {
+        ...state,
+        ...{
+          inputEmpty: false,
+          str: action.payload.str
+        }
+      };
 
     case t.SEARCH_RESULT:
-      return [...action.payload.data];
+      return {
+        ...state,
+        ...action.payload
+      };
 
     case t.SEARCH_RESULT_RESET:
-      return [];
+      return initState;
 
     default:
       return state;
